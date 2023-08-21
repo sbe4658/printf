@@ -9,6 +9,7 @@ int print_str(va_list ar)
 {
 	char *tmp = va_arg(ar, char *);
 	int i;
+
 	if (tmp == NULL)
 	{
 		write(1, "(null)", 6);
