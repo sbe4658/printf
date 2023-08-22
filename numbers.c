@@ -12,7 +12,7 @@ int print_dec(va_list ar)
 
 	tmp = va_arg(ar, int);
 	size = snum(tmp);
-	a = malloc(sizeof(char) * size);
+	a = malloc(sizeof(char) * (size + 1));
 	if (a == NULL)
 	{
 		printf("malloc failed");
