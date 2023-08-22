@@ -14,7 +14,7 @@ int base_2(va_list ar)
 	if (tmp < 0)
 		return (0);
 	size = _dpow(tmp);
-	b = malloc(sizeof(char) * size);
+	b = malloc(sizeof(char) * (size + 1));
 	if (b == NULL)
 		return (0);
 
@@ -53,6 +53,7 @@ char *_mem2set(char *a, int s, int n)
 	int i, m = 0;
 
 	m = ispow2(n);
+	/* a[s] = '\0';*/
 	if (m == 0)
 	{
 		s--;
