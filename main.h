@@ -22,6 +22,10 @@ int print_str(va_list);
 int print_dec(va_list);
 int print_int(va_list);
 int snum(int);
+int base_2(va_list);
+int _dpow(int);
+int ispow2(int);
+char *_mem2set(char *, int, int);
 
 /**
  * foramt - struct for format specifiers.
