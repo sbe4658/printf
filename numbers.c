@@ -14,10 +14,8 @@ int print_dec(va_list ar)
 	size = snum(tmp);
 	a = malloc(sizeof(char) * (size + 1));
 	if (a == NULL)
-	{
-		printf("malloc failed");
 		return (0);
-	}
+
 	a[size] = '\0';
 	i = size - 1;
 	if (tmp < 0)
