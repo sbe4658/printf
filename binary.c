@@ -53,7 +53,7 @@ char *_mem2set(char *a, int s, int n)
 	int i, m = 0;
 
 	m = ispow2(n);
-	/* a[s] = '\0';*/
+	a[s] = '\0';
 	if (m == 0)
 	{
 		s--;

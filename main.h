@@ -25,9 +25,12 @@ int base_2(va_list);
 int _dpow(int);
 int ispow2(int);
 char *_mem2set(char *, int, int);
+int print_u(va_list);
+int _abs(int);
+void print_nums(char *, int, int);
 
 /**
- * format - struct for format specifiers.
+ * struct format - struct for format specifiers.
  *
  * @t: for the type refered to it with a single char.
  * @f: a function pointer.

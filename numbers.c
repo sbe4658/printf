@@ -7,7 +7,7 @@
  */
 int print_dec(va_list ar)
 {
-	int tmp, size = 0, i = 0, n = 0;
+	int tmp, size = 0;
 	char *a;
 
 	tmp = va_arg(ar, int);
@@ -15,24 +15,8 @@ int print_dec(va_list ar)
 	a = malloc(sizeof(char) * (size + 1));
 	if (a == NULL)
 		return (0);
+	print_nums(a, size, tmp);
 
-	a[size] = '\0';
-	i = size - 1;
-	if (tmp < 0)
-	{
-		_putchar('-');
-		tmp = -tmp;
-	}
-	while (i >= 0)
-	{
-		n = tmp;
-		a[i] = (n % 10) + 48;
-		tmp = tmp / 10;
-		i--;
-	}
-	write(1, a, size);
-
-	free(a);
 	return (size);
 }
 /**
@@ -66,4 +50,56 @@ int print_int(va_list ar)
 
 	size = print_dec(ar);
 	return (size);
+}
+/**
+ * print_u - prints unsigned ints, base 10.
+ * @ar: argument passed.
+ *
+ * Return: the number of digits printed.
+ */
+int print_u(va_list ar)
+{
+	int size = 0, tmp = va_arg(ar, int);
+	char *a;
+
+	if (tmp < 0)
+		tmp = tmp * (-1);
+	size = snum(tmp);
+	a = malloc(sizeof(char) * (size + 1));
+	if (a == NULL)
+		return (0);
+	print_nums(a, size, tmp);
+	return (size);
+}
+/**
+ * print_nums - prints an array of numbers.
+ * Description: the print_nums function takes an array of chars sets it with
+ *		digits of the number of n, and then it prints the array a.
+ * @a: array.
+ * @s: the size of a.
+ * @n: a number.
+ *
+ * Return: Nothing.
+ */
+void print_nums(char *a, int s, int n)
+{
+	int tmp = 0, i;
+
+	a[s] = '\0';
+	i = s;
+	s--;
+	if (n < 0)
+	{
+		_putchar('-');
+		n = -n;
+	}
+	while (s >= 0)
+	{
+		tmp = n;
+		a[s] = (tmp % 10) + 48;
+		n /= 10;
+		s--;
+	}
+	write(1, a, i);
+	free(a);
 }
