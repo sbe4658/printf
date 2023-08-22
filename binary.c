@@ -11,6 +11,11 @@ int base_2(va_list ar)
 	int size = 0;
 	unsigned int tmp = va_arg(ar, unsigned int);
 
+	if (tmp == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
 	size = _dpow(tmp);
 	b = malloc(sizeof(char) * (size + 1));
 	if (b == NULL)
