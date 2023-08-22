@@ -32,8 +32,7 @@ int print_dec(va_list ar)
 		tmp = tmp / 10;
 		i--;
 	}
-	for (i = 0; i < size; i++)
-		_putchar(a[i]);
+	write(1, a, size);
 
 	free(a);
 	return (size);
