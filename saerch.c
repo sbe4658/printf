@@ -20,5 +20,5 @@ int (*search(char c))(va_list)
 		if (c == frs[i].t)
 			return (frs[i].f);
 	}
-	return (0);
+	return (NULL);
 }

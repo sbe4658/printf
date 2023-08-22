@@ -12,24 +12,34 @@ int _printf(const char *format, ...)
 	va_list ar;
 
 	if (format == NULL)
-		return (0);
+		return (-1);
 	va_start(ar, format);
 	for (i = 0; format[i] != '\0'; i++)
 	{
-		n++;
 		if (format[i] == '%')
 		{
 			if (format[i + 1] == '%')
-				_putchar('%');
+			{
+				_putchar(format[i]);
+				i++;
+			}
 			else
 			{
 				fptr = search(format[i + 1]);
-				n += (*fptr)(ar);
+				if (fptr == NULL)
+					_putchar(format[i]);
+				else
+				{
+					n += (*fptr)(ar);
+					i++;
+				}
 			}
-			i++;
 		}
 		else
+		{
 			_putchar(format[i]);
+			n++;
+		}
 	}
-	return (n - 1);
+	return (n);
 }
