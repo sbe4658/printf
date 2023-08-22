@@ -28,7 +28,7 @@ int ispow2(int);
 char *_mem2set(char *, int, int);
 
 /**
- * foramt - struct for format specifiers.
+ * format - struct for format specifiers.
  *
  * @t: for the type refered to it with a single char.
  * @f: a function pointer.
