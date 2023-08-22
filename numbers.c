@@ -12,7 +12,7 @@ int print_dec(va_list ar)
 
 	tmp = va_arg(ar, int);
 	size = snum(tmp);
-	a = malloc(sizeof(int) * size);
+	a = malloc(sizeof(char) * size);
 	if (a == NULL)
 	{
 		printf("malloc failed");
@@ -20,6 +20,11 @@ int print_dec(va_list ar)
 	}
 	a[size] = '\0';
 	i = size - 1;
+	if (tmp < 0)
+	{
+		_putchar('-');
+		tmp = -tmp;
+	}
 	while (i >= 0)
 	{
 		n = tmp;
@@ -28,14 +33,8 @@ int print_dec(va_list ar)
 		i--;
 	}
 	for (i = 0; i < size; i++)
-	{
-		if (tmp < 0)
-		{
-			_putchar('-');
-			i++;
-		}
 		_putchar(a[i]);
-	}
+
 	free(a);
 	return (size);
 }
