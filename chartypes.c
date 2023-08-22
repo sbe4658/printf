@@ -30,5 +30,7 @@ int print_char(va_list ar)
 	char c = va_arg(ar, int);
 
 	_putchar(c);
+	if (c == '\0')
+		return (0);
 	return (1);
 }
