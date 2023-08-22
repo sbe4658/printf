@@ -9,10 +9,8 @@ int base_2(va_list ar)
 {
 	char *b;
 	int size = 0;
-	int tmp = va_arg(ar, int);
+	unsigned int tmp = va_arg(ar, unsigned int);
 
-	if (tmp < 0)
-		return (0);
 	size = _dpow(tmp);
 	b = malloc(sizeof(char) * (size + 1));
 	if (b == NULL)
@@ -29,7 +27,7 @@ int base_2(va_list ar)
  *
  * Return: the number of digits.
  */
-int _dpow(int n)
+int _dpow(unsigned int n)
 {
 	int i = 0;
 
@@ -48,9 +46,10 @@ int _dpow(int n)
  *
  * Return: same pointer after edit it.
  */
-char *_mem2set(char *a, int s, int n)
+char *_mem2set(char *a, int s, unsigned int n)
 {
-	int i, m = 0;
+	int i;
+	unsigned int m = 0;
 
 	m = ispow2(n);
 	a[s] = '\0';
@@ -78,11 +77,11 @@ char *_mem2set(char *a, int s, int n)
  *
  * Return: 1 if n is pow of 2, otherwise 0.
  */
-int ispow2(int n)
+int ispow2(unsigned int n)
 {
 	int m = 0;
 
-	while (n >= 0)
+	while (n != 0)
 	{
 		m = n % 2;
 		if (m == 1)
