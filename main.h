@@ -28,6 +28,7 @@ char *_mem2set(char *, int, unsigned int);
 int print_u(va_list);
 int _abs(int);
 void print_nums(char *, int, int);
+int _strlen(char *);
 
 /**
  * struct format - struct for format specifiers.
