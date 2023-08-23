@@ -31,7 +31,7 @@ int ispowb(unsigned int n, int b)
 	while (n != 0)
 	{
 		m = n % b;
-		if (m == 1)
+		if (m == 1 || b == 10 || b == 8)
 			return (0);
 		n /= b;
 	}
