@@ -15,8 +15,8 @@ int print_str(va_list ar)
 		write(1, "(null)", 6);
 		return (6);
 	}
-	for (i = 0; tmp[i] != '\0'; i++)
-		_putchar(tmp[i]);
+	i = _strlen(tmp);
+	write(1, tmp, i);
 	return (i);
 }
 /**
@@ -31,4 +31,19 @@ int print_char(va_list ar)
 
 	_putchar(c);
 	return (1);
+}
+/**
+ * _strlen - compute the length of a string.
+ * @s: string.
+ *
+ * Return: The length of s.
+ */
+int _strlen(char *s)
+{
+	int len = 0;
+
+	while (*(s++))
+		len++;
+
+	return (len);
 }
