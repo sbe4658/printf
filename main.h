@@ -22,11 +22,12 @@ int print_dec(va_list);
 int print_int(va_list);
 int snum(int);
 int base_2(va_list);
-int _dpow(unsigned int);
-int ispow2(unsigned int);
-char *_mem2set(char *, int, unsigned int);
+int _dpow(unsigned int, int);
+int ispowb(unsigned int, int);
+int _mem_base_set(unsigned int, int);
 int print_u(va_list);
-int _abs(int);
+int print_oct(va_list);
+int print_hex(va_list);
 void print_nums(char *, int, int);
 int _strlen(char *);
 
