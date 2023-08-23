@@ -32,7 +32,6 @@ int snum(int n)
 {
 	int i = 0;
 
-	printf("%d\n", n);
 	if (n == 0)
 		return (1);
 	while (n != 0)
