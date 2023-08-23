@@ -28,6 +28,7 @@ int _mem_base_set(unsigned int, int, char);
 int print_u(va_list);
 int print_oct(va_list);
 int print_hex(va_list);
+int print_HEX(va_list);
 char *memhex(char *, int, unsigned int, char);
 void print_nums(char *, int, int);
 int _strlen(char *);

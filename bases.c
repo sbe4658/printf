@@ -32,7 +32,7 @@ int ispowb(unsigned int n, int b)
 	while (n != 0)
 	{
 		m = n % b;
-		if (m == 1 || b == 10)
+		if (m == 1 || b == 10 || b == 8)
 			return (0);
 		n /= b;
 	}
@@ -111,7 +111,7 @@ char *memhex(char *a, int s, unsigned int n, char C)
 
 	a[s] = '\0';
 	s--;
-	while (s != 0)
+	while (s >= 0)
 	{
 		m = n % 16;
 		if (m >= 10)
@@ -121,7 +121,10 @@ char *memhex(char *a, int s, unsigned int n, char C)
 			{
 				if (hex[c][0] == m)
 				{
-					a[s] = (C = 'x' ? hex[c][1] : ((hex[c][1] - 'a') + 'A'));
+					if (C == 'x')
+						a[s] = hex[c][1];
+					else
+						a[s] = (hex[c][1] - 'a') + 'A';
 				}
 				c++;
 			}
