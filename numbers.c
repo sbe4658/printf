@@ -91,14 +91,14 @@ void print_nums(char *a, int s, int n)
 	i = s;
 	s--;
 	if (n < 0)
-	{
 		_putchar('-');
-		n = -n;
-	}
 	while (s >= 0)
 	{
 		tmp = n;
-		a[s] = (tmp % 10) + 48;
+		if (tmp < 0)
+			a[s] = ((tmp % 10) * (-1)) + 48;
+		else
+			a[s] = (tmp % 10) + 48;
 		n /= 10;
 		s--;
 	}
