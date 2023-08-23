@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
  * print_dec - prints base 10 numbers.
  * @ar: argument form a list.
@@ -7,7 +8,7 @@
  */
 int print_dec(va_list ar)
 {
-	int tmp, size = 0;
+	int tmp, size = 0, i, n = 0;
 	char *a;
 
 	tmp = va_arg(ar, int);
@@ -15,7 +16,23 @@ int print_dec(va_list ar)
 	a = malloc(sizeof(char) * (size + 1));
 	if (a == NULL)
 		return (0);
-	print_nums(a, size, tmp);
+
+	a[size] = '\0';
+	i = size - 1;
+	if (n < 0)
+		_putchar('-');
+	while (i >= 0)
+	{
+		n = tmp;
+		if (n < 0)
+			a[i] = ((n % 10) * (-1)) + 48;
+		else
+			a[i] = (n % 10) + 48;
+		tmp /= 10;
+		i--;
+	}
+	write(1, a, size);
+	free(a);
 	if (tmp < 0)
 		size++;
 
@@ -31,6 +48,7 @@ int snum(int n)
 {
 	int i = 0;
 
+	printf("%d\n", n);
 	if (n == 0)
 		return (1);
 	while (n != 0)
@@ -61,47 +79,32 @@ int print_int(va_list ar)
  */
 int print_u(va_list ar)
 {
-	int size = 0, tmp = va_arg(ar, int);
+	int size = 0, i, n = 0;
+	unsigned int tmp = va_arg(ar, unsigned int), m;
 	char *a;
 
-	if (tmp < 0)
-		tmp = tmp * (-1);
-	size = snum(tmp);
+	m = tmp;
+	if (m == 0)
+		size = 1;
+	while (m != 0)
+	{
+		m = (m / 10);
+		size++;
+	}
 	a = malloc(sizeof(char) * (size + 1));
 	if (a == NULL)
 		return (0);
-	print_nums(a, size, tmp);
-	return (size);
-}
-/**
- * print_nums - prints an array of numbers.
- * Description: the print_nums function takes an array of chars sets it with
- *		digits of the number of n, and then it prints the array a.
- * @a: array.
- * @s: the size of a.
- * @n: a number.
- *
- * Return: Nothing.
- */
-void print_nums(char *a, int s, int n)
-{
-	int tmp = 0, i;
-
-	a[s] = '\0';
-	i = s;
-	s--;
-	if (n < 0)
-		_putchar('-');
-	while (s >= 0)
+	a[size] = '\0';
+	i = size - 1;
+	while (i >= 0)
 	{
-		tmp = n;
-		if (tmp < 0)
-			a[s] = ((tmp % 10) * (-1)) + 48;
-		else
-			a[s] = (tmp % 10) + 48;
-		n /= 10;
-		s--;
+		n = tmp % 10;
+		a[i] = n + 48;
+		tmp /= 10;
+		i--;
 	}
-	write(1, a, i);
+	write(1, a, size);
 	free(a);
+
+	return (size);
 }
