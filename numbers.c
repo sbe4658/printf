@@ -55,26 +55,6 @@ int print_int(va_list ar)
 	return (size);
 }
 /**
- * print_u - prints unsigned ints, base 10.
- * @ar: argument passed.
- *
- * Return: the number of digits printed.
- */
-int print_u(va_list ar)
-{
-	int size = 0;
-	unsigned int tmp = va_arg(ar, unsigned int);
-	char *a;
-
-	a = malloc(sizeof(char) * (size + 1));
-	if (a == NULL)
-		return (0);
-	print_nums(a, size, tmp);
-	free(a);
-
-	return (size);
-}
-/**
  * print_nums - prints an array of numbers.
  * Description: the print_nums function takes an array of chars sets it with
  *		digits of the number of n, and then it prints the array a.
