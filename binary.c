@@ -10,6 +10,6 @@ int base_2(va_list ar)
 	int size = 0;
 	unsigned int tmp = va_arg(ar, unsigned int);
 
-	size = _mem_base_set(tmp, 2);
+	size = _mem_base_set(tmp, 2, 'b');
 	return (size);
 }
