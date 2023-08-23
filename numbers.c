@@ -8,7 +8,7 @@
  */
 int print_dec(va_list ar)
 {
-	int tmp, size = 0, i, n = 0;
+	int tmp, size = 0;
 	char *a;
 
 	tmp = va_arg(ar, int);
@@ -63,31 +63,14 @@ int print_int(va_list ar)
  */
 int print_u(va_list ar)
 {
-	int size = 0, i, n = 0;
-	unsigned int tmp = va_arg(ar, unsigned int), m;
+	int size = 0;
+	unsigned int tmp = va_arg(ar, unsigned int);
 	char *a;
 
-	m = tmp;
-	if (m == 0)
-		size = 1;
-	while (m != 0)
-	{
-		m = (m / 10);
-		size++;
-	}
 	a = malloc(sizeof(char) * (size + 1));
 	if (a == NULL)
 		return (0);
-	a[size] = '\0';
-	i = size - 1;
-	while (i >= 0)
-	{
-		n = tmp % 10;
-		a[i] = n + 48;
-		tmp /= 10;
-		i--;
-	}
-	write(1, a, size);
+	print_nums(a, size, tmp);
 	free(a);
 
 	return (size);
