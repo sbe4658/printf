@@ -30,7 +30,10 @@ int _printf(const char *format, ...)
 			{
 				fptr = search(format[i + 1]);
 				if (fptr == NULL)
+				{
 					_putchar(format[i]);
+					n++;
+				}
 				else
 				{
 					n += (*fptr)(ar);
