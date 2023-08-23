@@ -16,6 +16,8 @@ int print_dec(va_list ar)
 	if (a == NULL)
 		return (0);
 	print_nums(a, size, tmp);
+	if (tmp < 0)
+		size++;
 
 	return (size);
 }
