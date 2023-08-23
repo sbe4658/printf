@@ -7,8 +7,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int n = 0, i = 0;
-	int (*fptr)(va_list);
+	int n = 0, i = 0, (*fptr)(va_list);
 	va_list ar;
 
 	if (format == NULL)
@@ -20,7 +19,7 @@ int _printf(const char *format, ...)
 		{
 			if (format[i + 1] == '\0' || format[i + 1] == ' ')
 				return (-1);
-			if (format[i + 1] == '%')
+			else if (format[i + 1] == '%')
 			{
 				_putchar(format[i + 1]);
 				n++;
