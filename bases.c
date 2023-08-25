@@ -111,6 +111,8 @@ char *memhex(char *a, int s, unsigned int n, char C)
 
 	a[s] = '\0';
 	s--;
+	if (s <= 1)
+		_putchar('0');
 	while (s >= 0)
 	{
 		m = n % 16;

@@ -18,6 +18,7 @@ int _printf(const char *format, ...);
 int (*search(char c))(va_list);
 int print_char(va_list);
 int print_str(va_list);
+int print_Str(va_list);
 int print_dec(va_list);
 int print_int(va_list);
 int snum(int);

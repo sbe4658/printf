@@ -20,6 +20,32 @@ int print_str(va_list ar)
 	return (i);
 }
 /**
+ * print_Str - works like print_str, but print_Str prints
+ * replace non-printable characters with \x.
+ * @ar: argument passed.
+ *
+ * Return: the length.
+ */
+int print_Str(va_list ar)
+{
+	char *tmp = va_arg(ar, char *);
+	int s = 0;
+
+	for (; *tmp != '\0'; tmp++)
+	{
+		if (*tmp > 31 && *tmp < 127)
+			_putchar(*tmp);
+		else
+		{
+			write(1, "\\x", 2);
+			s++;
+			s += _mem_base_set(*tmp, 16, '2');
+		}
+		s++;
+	}
+	return (s);
+}
+/**
  * print_char - prints a char.
  * @ar: a given char arg.
  *

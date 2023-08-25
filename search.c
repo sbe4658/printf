@@ -16,11 +16,12 @@ int (*search(char c))(va_list)
 		{'u', print_u},
 		{'o', print_oct},
 		{'x', print_hex},
-		{'X', print_HEX}
+		{'X', print_HEX},
+		{'S', print_Str}
 	};
 	int i;
 
-	for (i = 0; i < 9; i++)
+	for (i = 0; i < 10; i++)
 	{
 		if (c == frs[i].t)
 			return (frs[i].f);
