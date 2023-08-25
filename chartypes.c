@@ -38,8 +38,7 @@ int print_Str(va_list ar)
 		else
 		{
 			write(1, "\\x", 2);
-			s++;
-			s += _mem_base_set(*tmp, 16, '2');
+			s += 2 + _mem_base_set(*tmp, 16, '2');
 		}
 		s++;
 	}
