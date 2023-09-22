@@ -8,10 +8,6 @@ implementation of the printf function in C. This project represents my efforts t
 
 1. [Project Status](##Project-Status "Ongoing")
 1. [Function Description](#Function-Description "_printf")
-   1. [Prototype](###Prototype "prototype")
-   2. [Description](###Description "description")
-   3. [Format specifiers](###Format-Specifiers "Availaible")
-   4. [Return Value](###Return-Value "return")
 1. [Usage](##Usage "Compile it!")
 
 ## Project Status
