@@ -9,19 +9,20 @@ implementation of the printf function in C. This project represents my efforts t
 1. [Project Status](##Project-Status "Ongoing")
 1. [Function Description](#Function-Description "_printf")
    1. [Prototype](###Prototype "prototype")
-      2. [Description](###Description "description")
-         3. [Format specifiers](###Format-Specifiers "Availaible")
-	    4. [Return Value](###Return-Value "return")
-	    1. [Usage](##Usage "Compile it!")
-	    ## Project Status
-	    I've put significant effort into ensuring that there are no memory leaks in the code. I'll be adding more stuff from the standart library printf; including:
-	    * the pointer format specifier.
-	    * non-custom conversion specifiers (i.e `+`, `#` and `space`, ...).
-	    * Handling the field width.
-	    * the precision for non-custom conversion specifiers.
-	    * `0` & `-` flags.
-	    * Custom format specifier for reversing a string `r`.
-	    * Custom format specifier for rot13 `R`.
+   2. [Description](###Description "description")
+   3. [Format specifiers](###Format-Specifiers "Availaible")
+   4. [Return Value](###Return-Value "return")
+1. [Usage](##Usage "Compile it!")
+
+## Project Status
+I've put significant effort into ensuring that there are no memory leaks in the code. I'll be adding more stuff from the standart library printf; including:
+* the pointer format specifier.
+* non-custom conversion specifiers (i.e `+`, `#` and `space`, ...).
+* Handling the field width.
+* the precision for non-custom conversion specifiers.
+* `0` & `-` flags.
+* Custom format specifier for reversing a string `r`.
+* Custom format specifier for rot13 `R`.
 
 ## Function Description
 
