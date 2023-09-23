@@ -1,6 +1,6 @@
-# printf Clone
+# Printf Clone
 
-Welcome to my printf project, an implementation of the printf function in C. This project represents my efforts to understand and apply various format specifiers. Here's a breakdown of what I've handled so far:
+Welcome to my printf project, an implementation of the printf function in C. This project represents my efforts to understand and apply various format specifiers.
 
 implementation of the printf function in C. This project represents my efforts to understand and apply various format specifiers. This an ongoing project, so I'll be adding more stuff soon.
 
@@ -23,15 +23,12 @@ I've put significant effort into ensuring that there are no memory leaks in the 
 ## Function Description
 
 ### Prototype
----
 `int _printf(const char *format, ...)`
 
 ### Description
----
 `_printf` is a custom implementation of the standard `printf` function in C. It takes a format string and optional arguments, processes the format specifiers, and prints the formatted output to the standard output.
 
 #### Format Specifiers
----
 - `%s`: Prints a string.
 - `%i`: Print signed integers.
 - `%d`: Prints dicemals.
@@ -52,7 +49,6 @@ Using `_printf` requires you to all the files in this repository, You can add it
 I use `gcc` to compile the code:
 ~~~
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o output_file`
-
 ~~~
 ## Friendly Reminder
 I'd like to kindly remind you that this project represents my own learning journey and hard work. While I'm more than happy to share my code and knowledge, I encourage everyone to respect the ALX integrity and originality, `#weDoHardThings`. Please do NOT copy or directly use my code in your own projects otherwise you'll be flagged by Kimba :lion:. Plagiarism not only diminishes the learning experience but can also have serious consequences In your career as a SE.
