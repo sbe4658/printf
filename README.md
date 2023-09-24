@@ -1,8 +1,6 @@
 # Printf Clone
 
-Welcome to my printf project, an implementation of the printf function in C. This project represents my efforts to understand and apply various format specifiers.
-
-implementation of the printf function in C. This project represents my efforts to understand and apply various format specifiers. This an ongoing project, so I'll be adding more stuff soon.
+Welcome to my printf project, an implementation of the printf function in C. This project represents my efforts to understand and apply various format specifiers. This an ongoing project, so I'll be adding more stuff soon.
 
 ## Table of content
 
