@@ -18,7 +18,8 @@ int (*search(char c))(va_list)
 		{'x', print_hex},
 		{'X', print_HEX},
 		{'S', print_Str},
-		{'r', string_rev}
+		{'r', string_rev},
+		{'R', rot13}
 	};
 	int i;
 

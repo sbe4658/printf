@@ -34,6 +34,8 @@ void print_nums(char *, int, int);
 int _strlen(char *);
 int string_rev(va_list); 
 void revrecu(char *);
+int rot13(va_list);
+int _isalpha(char c)
 
 /**
  * struct format - struct for format specifiers.
