@@ -12,7 +12,7 @@ int print_dec(va_list ar)
 	char *a;
 
 	tmp = va_arg(ar, int);
-	size = snum(tmp);
+	size = _dpow(tmp, 10);
 	a = malloc(sizeof(char) * (size + 1));
 	if (a == NULL)
 		return (0);
@@ -21,25 +21,6 @@ int print_dec(va_list ar)
 		size++;
 
 	return (size);
-}
-/**
- * snum - counts the number of digits in a number.
- * @n: a given number.
- *
- * Return: the number of digit.
- */
-int snum(int n)
-{
-	int i = 0;
-
-	if (n == 0)
-		return (1);
-	while (n != 0)
-	{
-		n = (n / 10);
-		i++;
-	}
-	return (i);
 }
 /**
  * print_int - prints a integer.

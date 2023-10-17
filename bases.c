@@ -1,8 +1,8 @@
 #include "main.h"
 /**
  * _dpow - counts the number of digits.
- * @n: base 10 number.
- * @b: the base of which n would be converted to,
+ * @n: A number.
+ * @b: The base of which n would be converted to,
  * it is only for %u, %b, %o and %x.
  *
  * Return: the number of digits.
@@ -11,6 +11,8 @@ int _dpow(unsigned int n, int b)
 {
 	int i = 0;
 
+	if (n == 0)
+		return (1);
 	while (n > 0)
 	{
 		n /= b;
@@ -92,7 +94,7 @@ int _mem_base_set(unsigned int n, int b, char C)
  * memhex - converts n to base 8 and set, its digits in the address a.
  * @a: an address in memory.
  * @s: size of a.
- * @n: the size of a.
+ * @n: the number.
  * @C: format X or x,..etc.
  *
  * Return: Always 0.
@@ -107,7 +109,7 @@ char *memhex(char *a, int s, unsigned int n, char C)
 		{14, 'e'},
 		{15, 'f'}
 	};
-	int m, c;
+	int m = 0, c = 0;
 
 	a[s] = '\0';
 	s--;

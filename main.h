@@ -2,12 +2,11 @@
 #define MAIN_H
 
 #ifndef NULL
-
 #define NULL (void *)0
-
 #endif
 
 /* Header's section */
+#include <stdio.h>
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdlib.h>
@@ -33,6 +32,8 @@ int print_HEX(va_list);
 char *memhex(char *, int, unsigned int, char);
 void print_nums(char *, int, int);
 int _strlen(char *);
+int string_rev(va_list); 
+void revrecu(char *);
 
 /**
  * struct format - struct for format specifiers.
