@@ -14,10 +14,10 @@ int rot13(va_list ar)
 	{
 		if (_isalpha(s[i]))
 		{
-			if (s[i] > 'M' || s[i] > 'm')
-				_putchar(s[i] - 13);
-			else
+			if (s[i] <= 'N' && s[i] <= 'n')
 				_putchar(s[i] + 13);
+			else
+				_putchar(s[i] - 13);
 		}
 		i++;
 	}
