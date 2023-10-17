@@ -21,6 +21,7 @@ int rot13(va_list ar)
 		}
 		i++;
 	}
+	return (size);
 }
 /**
  * _isalpha - checks if a character is form the alphabets.

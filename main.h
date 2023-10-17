@@ -35,7 +35,7 @@ int _strlen(char *);
 int string_rev(va_list); 
 void revrecu(char *);
 int rot13(va_list);
-int _isalpha(char c)
+int _isalpha(char);
 
 /**
  * struct format - struct for format specifiers.
