@@ -23,7 +23,7 @@ int (*search(char c))(va_list)
 	};
 	int i;
 
-	for (i = 0; i < 11; i++)
+	for (i = 0; i < 12; i++)
 	{
 		if (c == frs[i].t)
 			return (frs[i].f);
