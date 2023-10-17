@@ -34,7 +34,7 @@ int print_Str(va_list ar)
 	for (; *tmp != '\0'; tmp++)
 	{
 		if (*tmp > 31 && *tmp < 127)
-			_putchar(*tmp);
+			putchar(*tmp);
 		else
 		{
 			write(1, "\\x", 2);

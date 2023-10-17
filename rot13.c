@@ -16,7 +16,7 @@ int rot13(va_list ar)
 		{
 			if (s[i] <= 'N' && s[i] <= 'n')
 				_putchar(s[i] + 13);
-			else
+			else if (s[i] > 'N' || s[i] > 'n')
 				_putchar(s[i] - 13);
 		}
 		i++;
